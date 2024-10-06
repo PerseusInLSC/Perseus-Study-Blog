@@ -169,4 +169,4 @@ Error: utterances is not installed on xxx/xxx.github.io. If you own this repo, i
 Gmeek的可定制化功能非常高，下面的链接是一些更加高级的设置教程，还有插件的使用等。
 https://meekdai.github.io/tag.html#Gmeek
 
-<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>"}## -->
+<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script>"}## -->
