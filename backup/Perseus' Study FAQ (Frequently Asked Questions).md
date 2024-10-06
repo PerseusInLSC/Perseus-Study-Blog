@@ -40,6 +40,6 @@ As Perseus' Study is using CC0 1.0, we cannot sue you for providing our material
 - You will be offered four choices of rejoining the group if the reason of suspension is inactivity, for example, English/Chinese writing, create study notes (min 5 pages) and Visual Arts (e.g. Zentangle)
 ## What exactly are the "Resources" that I can use?
 List of resources: https://sites.google.com/lsc.hk/perseus-study/resources (Categorized by subjects, Subpages)
-### *`We believe information should be always free and easy to access. This is the key. `*
+<code>We believe information should be always free and easy to access. This is the key. </code>
 Last updated: 6th October, 2024 14:18 (Sun)
 <!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>"}## -->
