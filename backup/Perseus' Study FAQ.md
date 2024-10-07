@@ -11,7 +11,7 @@ __Website__: https://sites.google.com/lsc.hk/perseus-study (Only Avaliable to Me
 __Discord__: Perseus' Study Server: https://discord.gg/sSuVpT2TBR, Legacy server: https://discord.gg/eyRCkbE5Rh
 __Google Drive__: https://drive.google.com/open?id=14zPtduxafZ1o3gyNuBot3TbspojPS6jc
 ## What are the rules & requlations of Perseus' Study?
-Rules & Requlations: https://sites.google.com/lsc.hk/perseus-study/about-us/copy-of-rules-regulations
+Rules & Regulations: https://sites.google.com/lsc.hk/perseus-study/about-us/copy-of-rules-regulations
 ## What is the aim of Perseus' Study
 - Better results
 - Better behaviour (Be warm-hearted to each other)
