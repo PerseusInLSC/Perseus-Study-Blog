@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
-    <script src='https://PerseusInLSC.github.io/Perseus-Study-Blog/assets/RonanTheme.js'></script><script src='https://PerseusInLSC.github.io/Perseus-Study-Blog/assets/GmeekVercount.js'></script>
+    <script src='https://raw.githubusercontent.com/PerseusInLSC/Perseus-Study-Blog/refs/heads/main/docs/assets/RonanTheme.js'></script><script src='https://raw.githubusercontent.com/PerseusInLSC/Perseus-Study-Blog/refs/heads/main/docs/assets/GmeekVercount.js'></script>
     <link rel="icon" href="https://PerseusInLSC.github.io/Perseus-Study-Blog/favicon.png"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
@@ -241,8 +241,8 @@ Last updated: 6th October, 2024 14:18 (Sun)</p>
 var now=new Date();
 document.getElementById("copyrightYear").innerHTML=now.getFullYear();
 
-if("06/10/2024"!=""){
-    var startSite=new Date("06/10/2024");
+if("10/06/2024"!=""){
+    var startSite=new Date("10/06/2024");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
     document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
@@ -326,6 +326,6 @@ function iFrameLoading(){
 
 
 </script>
-<script src='https://PerseusInLSC.github.io/Perseus-Study-Blog/assets/ArticleTOC.js'></script><script>document.querySelectorAll('a').forEach(anchor => {const img = anchor.querySelector('img');if (img && img.hasAttribute('data-canonical-src')) {const canonicalSrc = img.getAttribute('data-canonical-src');anchor.setAttribute('href', canonicalSrc);img.setAttribute('src', canonicalSrc);img.removeAttribute('data-canonical-src');}});</script><script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script>
+<script src='https://raw.githubusercontent.com/PerseusInLSC/Perseus-Study-Blog/refs/heads/main/docs/assets/ArticleTOC.js'></script><script>document.querySelectorAll('a').forEach(anchor => {const img = anchor.querySelector('img');if (img && img.hasAttribute('data-canonical-src')) {const canonicalSrc = img.getAttribute('data-canonical-src');anchor.setAttribute('href', canonicalSrc);img.setAttribute('src', canonicalSrc);img.removeAttribute('data-canonical-src');}});</script><script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script>
 
 </html>

@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let style = document.createElement("style");
         style.innerHTML = `
         html {    
-            background: url('https://pic3.zhimg.com/v2-15f60b69642ba46964509c51d2645202_r.jpg') no-repeat center center fixed;
-            background-size: cover;
         }
 
         /* 主体布局 */
@@ -62,8 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         style.innerHTML = `
 
         html {    
-            background: url('https://pic3.zhimg.com/v2-15f60b69642ba46964509c51d2645202_r.jpg') no-repeat center center fixed;
-            background-size: cover;
         }
 
         /* 主体布局 */
@@ -125,8 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
         style.innerHTML = `
         
         html {    
-            background: url('https://pic3.zhimg.com/v2-15f60b69642ba46964509c51d2645202_r.jpg') no-repeat center center fixed;
-            background-size: cover;
         }
 
         /* 主体布局 */
