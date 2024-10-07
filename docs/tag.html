@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
-    
-    <link rel="icon" href="https://raw.githubusercontent.com/PerseusInLSC/Perseus-Study-Blog/refs/heads/main/Perseus%20(1).png"><script>
+    <script src='https://PerseusInLSC.github.io/Perseus-Study-Blog/assets/RonanTheme.js'></script><script src='https://PerseusInLSC.github.io/Perseus-Study-Blog/assets/GmeekVercount.js'></script><script src='https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'></script><script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661896697976587' crossorigin='anonymous'></script>
+    <link rel="icon" href="https://PerseusInLSC.github.io/Perseus-Study-Blog/favicon.png"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="Perseus Study Blog search page">
-<title>Perseus Study Blog - Tag</title>
+<meta name="description" content="Perseus' Study Blog search page">
+<title>Perseus' Study Blog - Tag</title>
 
 </head>
 <style>
@@ -76,7 +76,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <nav class="SideNav"></nav>
 <div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://PerseusInLSC.github.io/Perseus-Study-Blog">Perseus Study Blog</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://PerseusInLSC.github.io/Perseus-Study-Blog">Perseus' Study Blog</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -85,8 +85,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 var now=new Date();
 document.getElementById("copyrightYear").innerHTML=now.getFullYear();
 
-if(""!=""){
-    var startSite=new Date("");
+if("06/10/2024"!=""){
+    var startSite=new Date("06/10/2024");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
     document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
@@ -236,7 +236,7 @@ function setClassDisplay(label){
     let lists = document.getElementsByClassName("lists");
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     tagTitle.innerHTML="Tag #"+label;
-    document.title=label+" - Perseus Study Blog";
+    document.title=label+" - Perseus' Study Blog";
     document.getElementsByClassName("subnav-search-input")[0].value='';
     if(label=="All"){
         for(let i = 0; i < lists.length; i++){lists[i].style.display='block';}
@@ -264,8 +264,8 @@ function searchShow(){
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     let searchInput = document.getElementsByClassName("subnav-search-input")[0].value;
     tagTitle.innerHTML="Search #"+searchInput;
-    if(searchInput==''){document.title="Search - Perseus Study Blog";}
-    else{document.title=searchInput+" - Perseus Study Blog";}
+    if(searchInput==''){document.title="Search - Perseus' Study Blog";}
+    else{document.title=searchInput+" - Perseus' Study Blog";}
     let a=0;
     window.location.hash="#"+(searchInput);
     for(let i = 0; i < lists.length; i++){
