@@ -1,3 +1,6 @@
+> [!NOTE]
+> News source: [Data shows average Chinese national now eats more protein than an American, UN food agency says (SCMP)
+](https://www.scmp.com/yp/discover/news/asia/article/3270893/data-shows-average-chinese-national-now-eats-more-protein-american-un-food-agency-says)
 ### Summary of the Event/Issue
 
 In 2021, China surpassed the United States in daily protein consumption per capita, reflecting significant improvements in food security and quality of life for its citizens. This milestone highlights changes in dietary patterns and agricultural practices in China.
