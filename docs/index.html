@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-color-mode="light" data-dark-theme="dark-blue" data-light-theme="light" lang="zh-CN">
+<html data-color-mode="light" data-dark-theme="dark-blue" data-light-theme="light" lang="en">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -55,7 +55,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1>
     <img src="/favicon.png" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">Perseus' Study Blog</a></h1>
 <div class="title-right">
-    <a href="https://blog.lscstudy.us.kg/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索">
+    <a href="https://blog.lscstudy.us.kg/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="Search">
         <svg class="octicon" width="16" height="16" >
             <path id="pathSearch" fill-rule="evenodd"></path>
         </svg>
@@ -67,7 +67,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <path id="pathRSS" fill-rule="evenodd"></path>
         </svg>
     </a>
-    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题"style="display:none;">
+    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="switch theme"style="display:none;">
         <svg class="octicon" width="16" height="16" >
             <path id="themeSwitch" fill-rule="evenodd"></path>
         </svg>
@@ -115,7 +115,7 @@ if("10/06/2024"!=""){
     var startSite=new Date("10/06/2024");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
-    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+    document.getElementById("runday").innerHTML="run "+diffDay+" days"+" • ";
 }
 </script></div>
 </body>
