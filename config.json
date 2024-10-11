@@ -15,5 +15,5 @@
     "nightTheme":"dark-blue",
     
     "script":"<script src='/assets/ArticleTOC.js'></script><script>document.querySelectorAll('a').forEach(anchor => {const img = anchor.querySelector('img');if (img && img.hasAttribute('data-canonical-src')) {const canonicalSrc = img.getAttribute('data-canonical-src');anchor.setAttribute('href', canonicalSrc);img.setAttribute('src', canonicalSrc);img.removeAttribute('data-canonical-src');}});</script>",
-    "allHead":"<script src='/assets/RonanTheme.js'></script><script src='/assets/GmeekVercount.js'></script><script>document.getElementById('footer1').innerHTML=document.getElementById('footer1').innerHTML.replace('Copyright © <span id=\"copyrightYear\">' + new Date(Date.now() + 8 * 60 * 60 * 1000).getUTCFullYear() + '</span>', 'CC0 1.0');</script>"
+    "allHead":"<script src='/assets/RonanTheme.js'></script><script src='/assets/GmeekVercount.js'></script><script>document.addEventListener('DOMContentLoaded', function() {document.getElementById('footer1').innerHTML=document.getElementById('footer1').innerHTML.replace('Copyright © <span id=\"copyrightYear\">' + new Date(Date.now() + 8 * 60 * 60 * 1000).getUTCFullYear() + '</span>', 'CC0 1.0');})</script>"
 }
