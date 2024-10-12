@@ -114,15 +114,15 @@
 ## 三、常见问题
 ### 1. 搭建不成功
 多半是没有按照安装步骤来，其实搭建就这2步，不要自己乱点乱设置，就不会有问题。
-- 案例一：https://github.com/Meekdai/Gmeek/issues/14 
-- 案例二：https://github.com/Meekdai/Gmeek/issues/18
-- 案例二：https://github.com/Meekdai/Gmeek/issues/20
+- 案例一：https://github. com/Meekdai/Gmeek/issues/14 
+- 案例二：https://github. com/Meekdai/Gmeek/issues/18
+- 案例二：https://github. com/Meekdai/Gmeek/issues/20
 
 ### 2. Actions执行失败
 修改了`config.json`配置文件后，需要全局生成。另外`label`标签没有打会出现这个问题。
 建议通过Actions->build Gmeek->Run workflow->里面的按钮全局重新生成一次
-- 案例一：https://github.com/Meekdai/Gmeek/issues/1
-- 案例二：https://github.com/Meekdai/Gmeek/issues/10
+- 案例一：https://github. com/Meekdai/Gmeek/issues/1
+- 案例二：https://github. com/Meekdai/Gmeek/issues/10
 
 ### 3. 导入以前的文章 
 如需修改发布时间，可以在文章最后一行添加如下代码。里面的时间是采用时间戳的形式，可以用如下[网站](https://tool.lu/timestamp)转换。  
@@ -168,5 +168,3 @@ Error: utterances is not installed on xxx/xxx.github.io. If you own this repo, i
 
 Gmeek的可定制化功能非常高，下面的链接是一些更加高级的设置教程，还有插件的使用等。
 https://meekdai.github.io/tag.html#Gmeek
-
-<!-- ##{"script":"<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script>"}## -->
