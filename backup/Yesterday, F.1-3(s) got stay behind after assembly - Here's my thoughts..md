@@ -1,4 +1,4 @@
-**By:** Lee Perseus Robin, Perseus (LSC 2023-?, 2G-16), Edited by ChatGPT-4o-Mini
+**By:** Lee Perseus Robin, Perseus (LSC 2023-?, 2G-16), Edited by ChatGPT-4o-Mini：[Unedited Ver.](https://blog.lscstudy.us.kg/saved-articles/F.1-3(s)%20got%20stay%20behind%20after%20assembly%20-%20Here%20is%20my%20thoughts..html)
 
 > [!CAUTION]
 > This article discusses a recent event and its validity is not proven; proceed at your own risk.
