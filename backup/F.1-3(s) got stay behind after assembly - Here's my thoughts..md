@@ -30,6 +30,8 @@ According to some (about seven) La Salle boys in Form 2A, 2B, 2D, and 2G, they c
 - Accusing the Form 1 boys for producing noise while Form 2s have "no responsibility."
 - One of the Form 2A students claimed that "one of the Form 1 boys stole 10 wallets," further accusing that "that Form 1 boy IS the main cause of the incidents."
 - One boy in Form 2G even claimed that Miss Cheung is "insane" and "enjoys torturing students."
+- Another boy in Form 2G citied some *rumors* that "all of the complaint letters were written by DBS(*) parents"
+(*) DBS - [Diocesan Boys' School](https://www.dbs.edu.hk/), a rival school of La Salle College
 
 However, two boys (interviewed independently) in Form 2G expressed a different yet unanimous opinion, stating:
 
