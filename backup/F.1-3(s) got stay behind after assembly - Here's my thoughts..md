@@ -12,7 +12,7 @@
 
 - On October 17, 2024, from 14:15 to 16:13, the junior forms at La Salle College held their assembly in the Hall.
 - During the assembly, the noise produced by the students was considered "too loud and annoying" by the Vice Principal, Miss Cheung.
-- Miss Cheung ordered the Form 1-3 students to stay behind until 16:03 while she reported on and criticized the "extraordinarily bad" behavior both inside and outside the campus, citing complaints from the public, theft, reminders about road safety, and littering issues.
+- Miss Cheung ordered the Form 1-3 students to stay behind until 16:03 while she reported on and criticized the "extraordinarily bad" manner & behaviour both inside and outside the campus, citing complaints from the public, theft cases reported lately, reminders about road safety, and littering issues around the campus (LG1, tuck shop, archery court, basketball court).
 - After 16:03, Miss Cheung instructed the junior form students to "calm down and be strictly silent" for 10 minutes, after which she allowed them to leave.
 - She also warned (or threatened) the students to explain the entire incident to their parents rather than provide "bits and pieces."
 - Unusually, she skipped singing the school song, stating that the students were "not in the mood to be proud of the College."
