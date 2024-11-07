@@ -1,3 +1,5 @@
+> [!NOTE]
+> This is outdated, Perseus' Study is retiring for a while. We'll be back in a month or two! (Edit Date: Nov 7, 24)
 ## Who is Perseus?
 Hi! I am Lee Perseus Robin (Email: s23218@lsc.hk, 24-25 2G-16). Feel free to contact me!
 ## What is Perseus' Study?
