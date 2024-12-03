@@ -10,7 +10,9 @@ This time around, it is about the Magic Music Kingdom, used by the Music Departm
 ## What is "Magic Music Kingdom"?
 > From [Hong Kong Music Publisher](https://www.hkmusic.com.hk/web/apps.asp?lang=en)
 
-Magic Music Kingdom has a series of interactive games with different levels to accommodate your music lessons. The games include recognizing notes and rhythm, knowledge about composers and their works, etc. All records can be saved for teachers or students to keep track of the learning progress.
+Magic Music Kingdom has a series of interactive games with different levels to accommodate your music lessons. 
+The games include recognizing notes and rhythm, knowledge about composers and their works, etc. 
+All records can be saved for teachers or students to keep track of the learning progress.
 
 ## What does the "cheating script" do?
 Basically:
@@ -94,9 +96,11 @@ else:
     print("Login failed or could not retrieve student info.")
 ```
 ## How to fix the Vulnerability?
-The only people who can fix this is the employees in "Hong Kong Music Publisher", which we have a very slim chance of getting their attention. Therefore, I propose that we just get rid of Music Magic Kingdom altogether, it ain't that fun, eh?
+The only people who can fix this is the employees in "Hong Kong Music Publisher", which we have a very slim chance of getting their attention. 
+Therefore, I propose that we just get rid of Music Magic Kingdom altogether, it ain't that fun, eh?
 ## How to contact us to get more information about the Vulnerability?
 For further inquiries or additional information regarding this vulnerability, please feel free to reach out to me at [perseus@lscstudy.us.kg](mailto:perseus@lscstudy.us.kg), [s23218@lsc.hk](mailto:s23218@lsc.hk) or [perseusrobin@gmail.com](mailto:perseusrobin@gmail.com).
 ## Special thanks
 The discoverer of the Vulnerability would like to thank the Developers at FFDec and 7-zip, their software has been a massive help for dicovering this.
+
 ![image](https://github.com/user-attachments/assets/e016973b-2da3-4b64-82b5-10a30ebad707)
