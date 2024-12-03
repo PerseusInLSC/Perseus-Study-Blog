@@ -4,7 +4,8 @@
 > [!NOTE]
 > This article discusses a recent event; please view it with caution.
 
-Since the email vulnerability, Lee Perseus Robin (2G - 16) has found yet again a method that could be taken advantage of. This time around, it is about the Magic Music Kingdom, used by the Music Department for giving tests on instruments and also counting as SBA marks.
+Since the email vulnerability, Lee Perseus Robin (2G - 16) has found yet again a Vulnerability that could be taken advantage of. 
+This time around, it is about the Magic Music Kingdom, used by the Music Department for giving tests on instruments and also counting as SBA marks.
 
 ## What is "Magic Music Kingdom"?
 > From [Hong Kong Music Publisher](https://www.hkmusic.com.hk/web/apps.asp?lang=en)
