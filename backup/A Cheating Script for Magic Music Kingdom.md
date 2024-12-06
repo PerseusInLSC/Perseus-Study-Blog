@@ -21,6 +21,7 @@ Basically:
 3. Then, the user's record will update to what the user has ordered, hence enabling cheating.
 
 ## How to run the cheating script?
+- **Windows Version - Based on Python with Tkinter**: [magic-music-kingdom-cheat-ui.zip](https://github.com/user-attachments/files/18041408/magic-music-kingdom-cheat-ui.zip)
 - **Google Form Version (Proof of Concept)**: [Google Form](https://forms.gle/etBbtW6QSHtjhE8z9)
 - **Source Code for the Google Form (Google Apps Script)**: [Pastebin](https://pastebin.com/raw/7Y2UNSbk)
 - **List of Game ID and Games**: [Imgur Album](https://imgur.com/a/8fGM1Hp)
