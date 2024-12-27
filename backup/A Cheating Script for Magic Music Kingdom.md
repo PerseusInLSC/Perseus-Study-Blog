@@ -16,7 +16,7 @@ All records can be saved for teachers or students to keep track of the learning 
 
 ## What does the "cheating script" do?
 Basically:
-1. It pretends to be the user by getting their credentials and retrieving the school code and school ID from the hkmusic.com.hk login page.
+1. It pretends to be the user by getting their credentials and retrieving the school code and school ID from the hkmusic.com.hk login page (NEW: Magic Music Kingdom API for the PoC Python Script).
 2. It continues to use the same logic that the normal app has and sends a POST request with the information given.
 3. Then, the user's record will update to what the user has ordered, hence enabling cheating.
 
@@ -26,7 +26,7 @@ Basically:
 - **Source Code for the Google Form (Google Apps Script)**: [Pastebin](https://pastebin.com/raw/7Y2UNSbk)
 - **List of Game ID and Games**: [Imgur Album](https://imgur.com/a/8fGM1Hp)
 
-### Python Version (for demonstration purposes only):
+### Python Version (for demonstration purposes only, PoC):
 1. Requirments: (pip install) requests
 ```python
 import requests
@@ -34,45 +34,30 @@ import re
 import math
 
 # Input variables from the user
-total_correct = input("Enter total correct answers: ")
-total_wrong = input("Enter total wrong answers: ")
 name_login = input("Enter your login name: ")
 password = input("Enter your password: ")
 gameID = input("Enter game ID: ")
+total_correct = input("Enter total correct answers: ")
+total_wrong = input("Enter total wrong answers: ")
 highestMaxCombo = input("Enter highest max combo: ")
 totalScore = input("Enter total score: ")
 
 # Calculate correct percentage
 correct_percent = math.ceil((int(total_correct) * 100) / (int(total_correct) + int(total_wrong))) if (int(total_correct) + int(total_wrong)) > 0 else 0
 
-# Fetching cookies
-initial_url = "https://www.hkmusic.com.hk"
-session = requests.Session()
-session.get(initial_url)
-
-# Get cookies from the session
-cookies = session.cookies.get_dict()
-
-# Login URL and payload
-login_url = "https://www.hkmusic.com.hk/web/student_pages/login/loginRegistered.asp"
-payload = {
-    'name_login': name_login,
-    'pw': password,
-}
-
 # Perform login
-response = session.post(login_url, data=payload, cookies=cookies)
-response_text = response.text
+response_text = requests.get(f"https://www.hkmusic.com.hk/web/student_pages/login/appLoginRegistered.asp?name_login={name_login}&pw={password}").text
 
-# Extract school code and student ID using regex
-school_code_match = re.search(r'<input[^>]+name="schoolCode"[^>]+value="([^"]*)"', response_text)
-student_id_match = re.search(r'<input[^>]+name="studentId"[^>]+value="([^"]*)"', response_text)
+# Extract school code and student ID using regex (Student Form Number is optional, doesn't matter)
+school_code_match = re.search(r'studentSchoolCode=([^&]*)', response_text)
+student_id_match = re.search(r'studentIDcode=([^&]*)', response_text)
+student_form_num_match = re.search(r'studentFormNum=([^&]*)', response_text)
 
 school_code = school_code_match.group(1) if school_code_match else None
 student_id = student_id_match.group(1) if student_id_match else None
+student_form_num = student_form_num_match.group(1) if student_form_num_match else None
 
-print("School code:", school_code)
-print("Student ID:", student_id)
+print("School code:", school_code, "\n", "Student ID:", student_id)
 
 if school_code and student_id:
     # Record URL and parameters
@@ -81,7 +66,7 @@ if school_code and student_id:
         'student_id': student_id,
         'school_code': school_code,
         'gameID': gameID,
-        'studentFormNumCurrent': 2,
+        'studentFormNumCurrent': student_form_num,
         'totalCorrect': total_correct,
         'totalWrong': total_wrong,
         'correctPercent': correct_percent,
@@ -90,7 +75,7 @@ if school_code and student_id:
     }
 
     # Submit the record
-    record_response = session.get(record_url, params=params)
+    record_response = requests.session().get(record_url, params=params)
     print("Response Status Code:", record_response.status_code)
     print("Response Content:", record_response.text)
 else:

@@ -98,7 +98,7 @@ All records can be saved for teachers or students to keep track of the learning 
 <h2>What does the "cheating script" do?</h2>
 <p>Basically:</p>
 <ol>
-<li>It pretends to be the user by getting their credentials and retrieving the school code and school ID from the hkmusic.com.hk login page.</li>
+<li>It pretends to be the user by getting their credentials and retrieving the school code and school ID from the hkmusic.com.hk login page (NEW: Magic Music Kingdom API for the PoC Python Script).</li>
 <li>It continues to use the same logic that the normal app has and sends a POST request with the information given.</li>
 <li>Then, the user's record will update to what the user has ordered, hence enabling cheating.</li>
 </ol>
@@ -109,7 +109,7 @@ All records can be saved for teachers or students to keep track of the learning 
 <li><strong>Source Code for the Google Form (Google Apps Script)</strong>: <a href="https://pastebin.com/raw/7Y2UNSbk" rel="nofollow">Pastebin</a></li>
 <li><strong>List of Game ID and Games</strong>: <a href="https://imgur.com/a/8fGM1Hp" rel="nofollow">Imgur Album</a></li>
 </ul>
-<h3>Python Version (for demonstration purposes only):</h3>
+<h3>Python Version (for demonstration purposes only, PoC):</h3>
 <ol>
 <li>Requirments: (pip install) requests</li>
 </ol>
@@ -118,45 +118,30 @@ All records can be saved for teachers or students to keep track of the learning 
 <span class="pl-k">import</span> <span class="pl-s1">math</span>
 
 <span class="pl-c"># Input variables from the user</span>
-<span class="pl-s1">total_correct</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter total correct answers: "</span>)
-<span class="pl-s1">total_wrong</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter total wrong answers: "</span>)
 <span class="pl-s1">name_login</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter your login name: "</span>)
 <span class="pl-s1">password</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter your password: "</span>)
 <span class="pl-s1">gameID</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter game ID: "</span>)
+<span class="pl-s1">total_correct</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter total correct answers: "</span>)
+<span class="pl-s1">total_wrong</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter total wrong answers: "</span>)
 <span class="pl-s1">highestMaxCombo</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter highest max combo: "</span>)
 <span class="pl-s1">totalScore</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">"Enter total score: "</span>)
 
 <span class="pl-c"># Calculate correct percentage</span>
 <span class="pl-s1">correct_percent</span> <span class="pl-c1">=</span> <span class="pl-s1">math</span>.<span class="pl-c1">ceil</span>((<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">*</span> <span class="pl-c1">100</span>) <span class="pl-c1">/</span> (<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">+</span> <span class="pl-en">int</span>(<span class="pl-s1">total_wrong</span>))) <span class="pl-k">if</span> (<span class="pl-en">int</span>(<span class="pl-s1">total_correct</span>) <span class="pl-c1">+</span> <span class="pl-en">int</span>(<span class="pl-s1">total_wrong</span>)) <span class="pl-c1">&gt;</span> <span class="pl-c1">0</span> <span class="pl-k">else</span> <span class="pl-c1">0</span>
 
-<span class="pl-c"># Fetching cookies</span>
-<span class="pl-s1">initial_url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://www.hkmusic.com.hk"</span>
-<span class="pl-s1">session</span> <span class="pl-c1">=</span> <span class="pl-s1">requests</span>.<span class="pl-c1">Session</span>()
-<span class="pl-s1">session</span>.<span class="pl-c1">get</span>(<span class="pl-s1">initial_url</span>)
-
-<span class="pl-c"># Get cookies from the session</span>
-<span class="pl-s1">cookies</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-c1">cookies</span>.<span class="pl-c1">get_dict</span>()
-
-<span class="pl-c"># Login URL and payload</span>
-<span class="pl-s1">login_url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://www.hkmusic.com.hk/web/student_pages/login/loginRegistered.asp"</span>
-<span class="pl-s1">payload</span> <span class="pl-c1">=</span> {
-    <span class="pl-s">'name_login'</span>: <span class="pl-s1">name_login</span>,
-    <span class="pl-s">'pw'</span>: <span class="pl-s1">password</span>,
-}
-
 <span class="pl-c"># Perform login</span>
-<span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-c1">post</span>(<span class="pl-s1">login_url</span>, <span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">payload</span>, <span class="pl-s1">cookies</span><span class="pl-c1">=</span><span class="pl-s1">cookies</span>)
-<span class="pl-s1">response_text</span> <span class="pl-c1">=</span> <span class="pl-s1">response</span>.<span class="pl-c1">text</span>
+<span class="pl-s1">response_text</span> <span class="pl-c1">=</span> <span class="pl-s1">requests</span>.<span class="pl-c1">get</span>(<span class="pl-s">f"https://www.hkmusic.com.hk/web/student_pages/login/appLoginRegistered.asp?name_login=<span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">name_login</span><span class="pl-kos">}</span></span>&amp;pw=<span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">password</span><span class="pl-kos">}</span></span>"</span>).<span class="pl-c1">text</span>
 
-<span class="pl-c"># Extract school code and student ID using regex</span>
-<span class="pl-s1">school_code_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-c1">search</span>(<span class="pl-s">r'&lt;input[^&gt;]+name="schoolCode"[^&gt;]+value="([^"]*)"'</span>, <span class="pl-s1">response_text</span>)
-<span class="pl-s1">student_id_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-c1">search</span>(<span class="pl-s">r'&lt;input[^&gt;]+name="studentId"[^&gt;]+value="([^"]*)"'</span>, <span class="pl-s1">response_text</span>)
+<span class="pl-c"># Extract school code and student ID using regex (Student Form Number is optional, doesn't matter)</span>
+<span class="pl-s1">school_code_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-c1">search</span>(<span class="pl-s">r'studentSchoolCode=([^&amp;]*)'</span>, <span class="pl-s1">response_text</span>)
+<span class="pl-s1">student_id_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-c1">search</span>(<span class="pl-s">r'studentIDcode=([^&amp;]*)'</span>, <span class="pl-s1">response_text</span>)
+<span class="pl-s1">student_form_num_match</span> <span class="pl-c1">=</span> <span class="pl-s1">re</span>.<span class="pl-c1">search</span>(<span class="pl-s">r'studentFormNum=([^&amp;]*)'</span>, <span class="pl-s1">response_text</span>)
 
 <span class="pl-s1">school_code</span> <span class="pl-c1">=</span> <span class="pl-s1">school_code_match</span>.<span class="pl-c1">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">school_code_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
 <span class="pl-s1">student_id</span> <span class="pl-c1">=</span> <span class="pl-s1">student_id_match</span>.<span class="pl-c1">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">student_id_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
+<span class="pl-s1">student_form_num</span> <span class="pl-c1">=</span> <span class="pl-s1">student_form_num_match</span>.<span class="pl-c1">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">student_form_num_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
 
-<span class="pl-en">print</span>(<span class="pl-s">"School code:"</span>, <span class="pl-s1">school_code</span>)
-<span class="pl-en">print</span>(<span class="pl-s">"Student ID:"</span>, <span class="pl-s1">student_id</span>)
+<span class="pl-en">print</span>(<span class="pl-s">"School code:"</span>, <span class="pl-s1">school_code</span>, <span class="pl-s">"<span class="pl-cce">\n</span>"</span>, <span class="pl-s">"Student ID:"</span>, <span class="pl-s1">student_id</span>)
 
 <span class="pl-k">if</span> <span class="pl-s1">school_code</span> <span class="pl-c1">and</span> <span class="pl-s1">student_id</span>:
     <span class="pl-c"># Record URL and parameters</span>
@@ -165,7 +150,7 @@ All records can be saved for teachers or students to keep track of the learning 
         <span class="pl-s">'student_id'</span>: <span class="pl-s1">student_id</span>,
         <span class="pl-s">'school_code'</span>: <span class="pl-s1">school_code</span>,
         <span class="pl-s">'gameID'</span>: <span class="pl-s1">gameID</span>,
-        <span class="pl-s">'studentFormNumCurrent'</span>: <span class="pl-c1">2</span>,
+        <span class="pl-s">'studentFormNumCurrent'</span>: <span class="pl-s1">student_form_num</span>,
         <span class="pl-s">'totalCorrect'</span>: <span class="pl-s1">total_correct</span>,
         <span class="pl-s">'totalWrong'</span>: <span class="pl-s1">total_wrong</span>,
         <span class="pl-s">'correctPercent'</span>: <span class="pl-s1">correct_percent</span>,
@@ -174,7 +159,7 @@ All records can be saved for teachers or students to keep track of the learning 
     }
 
     <span class="pl-c"># Submit the record</span>
-    <span class="pl-s1">record_response</span> <span class="pl-c1">=</span> <span class="pl-s1">session</span>.<span class="pl-c1">get</span>(<span class="pl-s1">record_url</span>, <span class="pl-s1">params</span><span class="pl-c1">=</span><span class="pl-s1">params</span>)
+    <span class="pl-s1">record_response</span> <span class="pl-c1">=</span> <span class="pl-s1">requests</span>.<span class="pl-c1">session</span>().<span class="pl-c1">get</span>(<span class="pl-s1">record_url</span>, <span class="pl-s1">params</span><span class="pl-c1">=</span><span class="pl-s1">params</span>)
     <span class="pl-en">print</span>(<span class="pl-s">"Response Status Code:"</span>, <span class="pl-s1">record_response</span>.<span class="pl-c1">status_code</span>)
     <span class="pl-en">print</span>(<span class="pl-s">"Response Content:"</span>, <span class="pl-s1">record_response</span>.<span class="pl-c1">text</span>)
 <span class="pl-k">else</span>:
