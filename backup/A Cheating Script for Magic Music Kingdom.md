@@ -57,7 +57,7 @@ school_code = school_code_match.group(1) if school_code_match else None
 student_id = student_id_match.group(1) if student_id_match else None
 student_form_num = student_form_num_match.group(1) if student_form_num_match else None
 
-print("School code:", school_code, "\n", "Student ID:", student_id)
+print("School code:", school_code, "\nStudent ID:", student_id)
 
 if school_code and student_id:
     # Record URL and parameters

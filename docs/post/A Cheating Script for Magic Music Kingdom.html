@@ -141,7 +141,7 @@ All records can be saved for teachers or students to keep track of the learning 
 <span class="pl-s1">student_id</span> <span class="pl-c1">=</span> <span class="pl-s1">student_id_match</span>.<span class="pl-c1">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">student_id_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
 <span class="pl-s1">student_form_num</span> <span class="pl-c1">=</span> <span class="pl-s1">student_form_num_match</span>.<span class="pl-c1">group</span>(<span class="pl-c1">1</span>) <span class="pl-k">if</span> <span class="pl-s1">student_form_num_match</span> <span class="pl-k">else</span> <span class="pl-c1">None</span>
 
-<span class="pl-en">print</span>(<span class="pl-s">"School code:"</span>, <span class="pl-s1">school_code</span>, <span class="pl-s">"<span class="pl-cce">\n</span>"</span>, <span class="pl-s">"Student ID:"</span>, <span class="pl-s1">student_id</span>)
+<span class="pl-en">print</span>(<span class="pl-s">"School code:"</span>, <span class="pl-s1">school_code</span>, <span class="pl-s">"<span class="pl-cce">\n</span>Student ID:"</span>, <span class="pl-s1">student_id</span>)
 
 <span class="pl-k">if</span> <span class="pl-s1">school_code</span> <span class="pl-c1">and</span> <span class="pl-s1">student_id</span>:
     <span class="pl-c"># Record URL and parameters</span>
