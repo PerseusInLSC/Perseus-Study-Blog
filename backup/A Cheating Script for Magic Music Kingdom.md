@@ -86,6 +86,9 @@ The only people who can fix this is the employees in "Hong Kong Music Publisher"
 Therefore, I propose that we just get rid of Music Magic Kingdom altogether, it ain't that fun, eh?
 ## How to contact us to get more information about the Vulnerability?
 For further inquiries or additional information regarding this vulnerability, please feel free to reach out to me at [perseus@lscstudy.us.kg](mailto:perseus@lscstudy.us.kg), [s23218@lsc.hk](mailto:s23218@lsc.hk) or [perseusrobin@gmail.com](mailto:perseusrobin@gmail.com).
+## Additional information
+Checking if the person has gotten 10 marks: https://pastebin.com/nDF8zawt
+The PoC Python script but using arguements: https://pastebin.com/DHMn6c2u
 ## Special thanks
 The discoverer of the Vulnerability would like to thank the Developers at FFDec and 7-zip, their software has been a massive help for dicovering this.
 
